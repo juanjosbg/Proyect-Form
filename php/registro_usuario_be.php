@@ -15,6 +15,7 @@
         echo'
             <script>
                 alert("usuario creado con exito");
+                window.location = "../index.php";
             </script>
         '
     }
