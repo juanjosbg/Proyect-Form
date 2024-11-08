@@ -7,8 +7,8 @@ $correo = mysqli_real_escape_string($conexion, $_POST['correo']);
 $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
 $contrasena = mysqli_real_escape_string($conexion, $_POST['contrasena']);
 
-// Encripta la contraseña
-$contrasena_encriptada = password_hash($contrasena, PASSWORD_DEFAULT);
+// Encripto de contraseña
+$contrasena = hash('sha512', $contrasena);
 
 // Verifica que el correo no se repita en la base de datos
 $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");
@@ -39,7 +39,6 @@ $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contraseña)
           VALUES ('$nombre_completo', '$correo', '$usuario', '$contrasena')";
 
 $ejecutar = mysqli_query($conexion, $query);
-
 if ($ejecutar) {
     echo '
         <script>
@@ -58,4 +57,5 @@ if ($ejecutar) {
 
 // Cierra la conexión
 mysqli_close($conexion);
+
 ?>

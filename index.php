@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login y Register - MagtimusPro</title>
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
-    <!--  -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="assests/css/style.css">
-    <!--  -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -33,20 +32,20 @@
             <!--Formulario de Login y registro-->
             <div class="contenedor__login-register">
                 <!--Login-->
-                <form action="" class="formulario__login">
+                <form action="php/login_usuario_be.php" method="POST" class="formulario__login">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Correo Electronico">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Ingrese con su usuario o correo" name="correo">
+                    <input type="password" placeholder="Contraseña" name="contrasena" >
                     <button>Entrar</button>
                 </form>
 
                 <!--Register-->
                 <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
                     <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre completo" name="nombre_completo">
-                    <input type="text" placeholder="Correo Electronico" name="correo">
-                    <input type="text" placeholder="Usuario" name="usuario">
-                    <input type="password" placeholder="Contraseña" name="contrasena">
+                    <input type="text" placeholder="Nombre completo" name="nombre_completo" required>
+                    <input type="text" placeholder="Correo Electronico" name="correo" required>
+                    <input type="text" placeholder="Usuario" name="usuario" required>
+                    <input type="password" placeholder="Contraseña" name="contrasena" required>
                     <button>Regístrarse</button>
                 </form>
             </div>
@@ -55,5 +54,4 @@
 
     <script src="assests/js/styles.js"></script>
 </body>
-
 </html>
