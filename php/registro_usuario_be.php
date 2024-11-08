@@ -7,9 +7,6 @@ $correo = mysqli_real_escape_string($conexion, $_POST['correo']);
 $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
 $contrasena = mysqli_real_escape_string($conexion, $_POST['contrasena']);
 
-// Encripta la contraseña
-$contrasena_encriptada = password_hash($contrasena, PASSWORD_DEFAULT);
-
 // Verifica que el correo no se repita en la base de datos
 $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");
 if (mysqli_num_rows($verificar_correo) > 0) {
